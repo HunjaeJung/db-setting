@@ -62,12 +62,3 @@ set artist=@col1, title=@col2, image_url=@col3;
 
 select * from song_info;
 
-LOAD DATA INFILE '/home/hunjaege/data/sample_2000' 
-INTO TABLE link_ids
-CHARACTER SET utf8
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-(@col1, @col2, @col3, @col4)
-set app_id=1, link_id = @col4, song_id=(select ifnull((select id
-from song_info where title=@col2 and artist=@col1 LIMIT 1), (select id from song_info LIMIT 1)));
-
