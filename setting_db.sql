@@ -52,13 +52,6 @@ set name=@col1, googleplay_url=@col2, android_prefix=@col3, android_appendix=@co
 
 select * from app_info;
 
-update app_info set googleplay_url=trim(googleplay_url)
-update app_info set android_prefix=trim(android_prefix)
-update app_info set android_appendix=trim(android_appendix)
-update app_info set iTunes_url=trim(iTunes_url)
-update app_info set ios_prefix=trim(ios_prefix)
-update app_info set ios_appendix=trim(ios_appendix)
-
 LOAD DATA INFILE '/home/hunjaege/data/sample_2000' 
 INTO TABLE song_info
 CHARACTER SET utf8
