@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS link_ids (
 
 SHOW tables;
 
-LOAD DATA INFILE '/home/hunjaege/data/app_info' 
+LOAD DATA INFILE '/home/hunjaege/db-setting/data/app_info' 
 INTO TABLE app_info
 CHARACTER SET utf8
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
@@ -53,7 +53,7 @@ set name=@col1, googleplay_url=@col2, android_prefix=@col3, android_appendix=@co
 
 select * from app_info;
 
-LOAD DATA INFILE '/home/hunjaege/data/sample_40' 
+LOAD DATA INFILE '/home/hunjaege/db-setting/data/sample_40' 
 INTO TABLE song_info
 CHARACTER SET utf8
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
