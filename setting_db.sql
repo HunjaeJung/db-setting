@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS link_ids (
      song_id     int(6)     not null,
      app_id     int(6)     not null,
      link_id     varchar(300)     not null,
+     usable    boolean   default null,
      PRIMARY KEY(id),
      CONSTRAINT `fk_link_app`
           FOREIGN KEY(song_id) REFERENCES song_info (id)
@@ -52,13 +53,13 @@ set name=@col1, googleplay_url=@col2, android_prefix=@col3, android_appendix=@co
 
 select * from app_info;
 
-LOAD DATA INFILE '/home/hunjaege/data/sample_2000' 
+LOAD DATA INFILE '/home/hunjaege/data/sample_40' 
 INTO TABLE song_info
 CHARACTER SET utf8
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
-(@col1, @col2, @col3)
-set artist=@col1, title=@col2, image_url=@col3;
+(@col1, @col2, @col3, @col4)
+set title=@col1, artist=@col2, album=@col3, image_url=@col4;
 
 select * from song_info;
 

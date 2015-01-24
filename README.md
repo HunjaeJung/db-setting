@@ -7,6 +7,4 @@ Curie database setting (MariaDB)
 	2. link_ids 넣기
 		>	mysql -uroot -p < appby.sql.sql
 
-### 데이터 확인
-
-	check ./data/app_info & ./data/sample_2000
+### 데이터 확인 ./data/app_info & ./data/sample_2000
